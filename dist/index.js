@@ -19739,6 +19739,8 @@ octokit.rest.issues.create({
 });
 
 
+console.log("github action 3");
+
 
 
 // 通过 @actions/core 这个库 获取到 action.yml 传递的 token 
