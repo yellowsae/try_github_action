@@ -22,7 +22,7 @@ const octokit = new Octokit({ auth: token });
 octokit.rest.issues.create({
   owner: "yellowsae",  // 作者
   repo: "try_github_action",  // 对应的仓库
-  title: getTitle(),  // 标题
+  title: getTitle() + "2",  // 标题
   body: getBody()  // 内容
 });
 
@@ -31,7 +31,7 @@ octokit.rest.issues.create({
 
 
 function getTitle() {
-  return dayjs().format("YYYY-MM-DD")
+  return dayjs().add("8", "hour").format("YYYY-MM-DD")
 }
 
 
@@ -40,8 +40,7 @@ function getBody() {
 }
 // 通过 @actions/core 这个库 获取到 action.yml 传递的 token
 
-
-
+console.log(getBody())
 // const octokit = new Octokit();
 
 // // Compare: https://docs.github.com/en/rest/reference/repos/#list-organization-repositories

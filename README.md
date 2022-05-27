@@ -33,6 +33,25 @@ octokit.rest.issues.create({
 1. 创建 `action.yml`
 
 ```yml
+name: 'test create issuse'   # 项目名字
+description: 'test create issuse'  # 描述
+
+# input 表示 action 可以接收外部传入的值
+inputs:
+  token:  # id of input  #  .github/workflows/main.yml 传入进来 token 
+    description: 'github token'  # 数据描述
+    required: true  # 是否必须
+# output 表示 action 可以传出数据
+# outputs:
+#   time: # id of output
+#     description: 'The time we greeted you'
+runs:
+  using: 'node12' #当前的环境
+  # main: 'index.js' # 主要执行的文件
+  main: "./dist/index.js"  # 编译后的 index.js
+
+# 使用 npm i -g @vercel/ncc   -> 将当前写的 index.js 的 Node16 版本 转为可以识别的  Node12 版本
+# 在 packages中： "build": "ncc build index.js --license licenses.txt"
 
 ```
 
