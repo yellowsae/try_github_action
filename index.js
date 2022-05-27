@@ -9,7 +9,6 @@ const { Octokit } = require("octokit");
 const core = require('@actions/core');  // 引入 @actions/core
 
 const dayjs = require('dayjs');
-const { re } = require("./dist");
 
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 
@@ -32,7 +31,7 @@ octokit.rest.issues.create({
 
 
 function getTitle() {
-  return dayjs.format("YYYY-MM-DD")
+  return dayjs().format("YYYY-MM-DD")
 }
 
 
