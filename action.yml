@@ -3,8 +3,7 @@ description: 'test create issuse'  # 描述
 
 # input 表示 action 可以接收外部传入的值
 inputs:
-  # 表示传入进来的数据描述
-  token:  # id of input
+  token:  # id of input  # 表示传入进来的数据描述
     description: 'github token'
     required: true
 # output 表示 action 可以传出数据
@@ -14,7 +13,7 @@ inputs:
 runs:
   using: 'node12' #当前的环境
   # main: 'index.js' # 主要执行的文件
-  main: "./dist/index.js"  # 编译后的 index.js
+  main: "/dist/index.js"  # 编译后的 index.js
 
 
 

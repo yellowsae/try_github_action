@@ -1,36 +1,36 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@actions/core': ^1.8.2
+  '@actions/core': 1.6.0
   '@octokit/rest': ^18.12.0
   '@vercel/ncc': ^0.34.0
   octokit: 1.7.0
 
 dependencies:
+  '@actions/core': registry.npmmirror.com/@actions/core/1.6.0
   '@octokit/rest': registry.npmmirror.com/@octokit/rest/18.12.0
   octokit: registry.npmmirror.com/octokit/1.7.0
 
 devDependencies:
-  '@actions/core': registry.npmmirror.com/@actions/core/1.8.2
   '@vercel/ncc': registry.npmmirror.com/@vercel/ncc/0.34.0
 
 packages:
 
-  registry.npmmirror.com/@actions/core/1.8.2:
-    resolution: {integrity: sha512-FXcBL7nyik8K5ODeCKlxi+vts7torOkoDAKfeh61EAkAy1HAvwn9uVzZBY0f15YcQTcZZ2/iSGBFHEuioZWfDA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@actions/core/-/core-1.8.2.tgz}
+  registry.npmmirror.com/@actions/core/1.6.0:
+    resolution: {integrity: sha512-NB1UAZomZlCV/LmJqkLhNTqtKfFXJZAUPcfl/zqG7EfsQdeUJtaWO98SGbuQ3pydJ3fHl2CvI/51OKYlCYYcaw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@actions/core/-/core-1.6.0.tgz}
     name: '@actions/core'
-    version: 1.8.2
+    version: 1.6.0
     dependencies:
-      '@actions/http-client': registry.npmmirror.com/@actions/http-client/2.0.1
-    dev: true
+      '@actions/http-client': registry.npmmirror.com/@actions/http-client/1.0.11
+    dev: false
 
-  registry.npmmirror.com/@actions/http-client/2.0.1:
-    resolution: {integrity: sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@actions/http-client/-/http-client-2.0.1.tgz}
+  registry.npmmirror.com/@actions/http-client/1.0.11:
+    resolution: {integrity: sha512-VRYHGQV1rqnROJqdMvGUbY/Kn8vriQe/F9HR2AlYHzmKuM/p3kjNuXhmdBfcVgsvRWTz5C5XW5xvndZrVBuAYg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@actions/http-client/-/http-client-1.0.11.tgz}
     name: '@actions/http-client'
-    version: 2.0.1
+    version: 1.0.11
     dependencies:
       tunnel: registry.npmmirror.com/tunnel/0.0.6
-    dev: true
+    dev: false
 
   registry.npmmirror.com/@octokit/app/12.0.5:
     resolution: {integrity: sha512-lM3pIfx2h+UbvsXHFVs1ApJ9Rmp8LO4ciFSr5q/9MdHmhsH6WtwayieUn875xwB77IoR9r8czxxxASu2WCtdeA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@octokit/app/-/app-12.0.5.tgz}
@@ -770,7 +770,7 @@ packages:
     name: tunnel
     version: 0.0.6
     engines: {node: '>=0.6.11 <=0.7.0 || >=0.7.3'}
-    dev: true
+    dev: false
 
   registry.npmmirror.com/universal-github-app-jwt/1.1.0:
     resolution: {integrity: sha512-3b+ocAjjz4JTyqaOT+NNBd5BtTuvJTxWElIoeHSVelUV9J3Jp7avmQTdLKCaoqi/5Ox2o/q+VK19TJ233rVXVQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/universal-github-app-jwt/-/universal-github-app-jwt-1.1.0.tgz}

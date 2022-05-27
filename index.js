@@ -4,7 +4,7 @@
 
 // 使用了 octokit 第三方库 ： https://www.npmjs.com/package/octokit
 
-const { Octokit } = require("@octokit/rest");
+const { Octokit } = require("octokit");
 
 const core = require('@actions/core');  // 引入 @actions/core
 
@@ -12,8 +12,6 @@ const core = require('@actions/core');  // 引入 @actions/core
 
 // TODO: auth : 为github的 中创建的 token 
 // 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
-
-
 
 const token = core.getInput("token");
 // octokit  api  create issuse
