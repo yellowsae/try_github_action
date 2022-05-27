@@ -5,14 +5,16 @@ jobs:  # 需要执行的 job
     runs-on: ubuntu-latest # 指定运行的环境
     name: create create issuse
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: create issuse action  # 起个项目名
         uses: ./  # 指定根目录下的 action.yml
         
         # with:  # 传参用的
         #   who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step  #  output 验证
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      # - name: Get the output time
+      #   run: echo "The time was ${{ steps.hello.outputs.time }}"
 
 
 
