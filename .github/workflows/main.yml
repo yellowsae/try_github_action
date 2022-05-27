@@ -9,9 +9,10 @@ jobs:  # 需要执行的 job
         uses: actions/checkout@v3
       - name: create issuse action  # 起个项目名
         uses: ./  # 指定根目录下的 action.yml
-        
-        # with:  # 传参用的
-        #   who-to-greet: 'Mona the Octocat'
+        # ${{secrets.TOKEN}}  # 在Github上设置 secrets.TOKEN -> 非明文  -> 通过 传参给 action.yml 
+        with:  # 传参用的
+          token: ${{secrets.TOKEN}}   # 传参给 action.yml 
+          
       # Use the output from the `hello` step  #  output 验证
       # - name: Get the output time
       #   run: echo "The time was ${{ steps.hello.outputs.time }}"

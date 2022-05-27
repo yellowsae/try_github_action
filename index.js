@@ -6,19 +6,18 @@
 
 const { Octokit } = require("@octokit/rest");
 
+const core = require('@actions/core');  // 引入 @actions/core
 
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 
 // TODO: auth : 为github的 中创建的 token 
-// const octokit = new Octokit({ auth: `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` });
+// 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
 
 
+
+const token = core.getInput("token");
 // octokit  api  create issuse
-
-
-// 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
-
-const octokit = new Octokit({ auth: `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` });
+const octokit = new Octokit({ auth: token });
 
 octokit.rest.issues.create({
   owner: "yellowsae",  // 作者
@@ -26,6 +25,12 @@ octokit.rest.issues.create({
   title: "Github Action 3",  // 标题
   body: "github action create"  // 内容
 });
+
+
+
+
+// 通过 @actions/core 这个库 获取到 action.yml 传递的 token 
+
 
 
 // const octokit = new Octokit();

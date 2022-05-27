@@ -2,13 +2,11 @@ name: 'test create issuse'   # 项目名字
 description: 'test create issuse'  # 描述
 
 # input 表示 action 可以接收外部传入的值
-# inputs:
-
+inputs:
   # 表示传入进来的数据描述
-  # who-to-greet:  # id of input
-  #   description: 'Who to greet'
-  #   required: true
-  #   default: 'World'
+  token:  # id of input
+    description: 'github token'
+    required: true
 # output 表示 action 可以传出数据
 # outputs:
 #   time: # id of output
