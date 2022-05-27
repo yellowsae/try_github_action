@@ -16,6 +16,7 @@
     "octokit": "1.7.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.34.0"
+    "@vercel/ncc": "^0.34.0",
+    "dayjs": "^1.11.2"
   }
 }

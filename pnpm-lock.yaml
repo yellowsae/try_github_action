@@ -4,6 +4,7 @@ specifiers:
   '@actions/core': 1.6.0
   '@octokit/rest': ^18.12.0
   '@vercel/ncc': ^0.34.0
+  dayjs: ^1.11.2
   octokit: 1.7.0
 
 dependencies:
@@ -13,6 +14,7 @@ dependencies:
 
 devDependencies:
   '@vercel/ncc': registry.npmmirror.com/@vercel/ncc/0.34.0
+  dayjs: registry.npmmirror.com/dayjs/1.11.2
 
 packages:
 
@@ -484,6 +486,12 @@ packages:
     version: 3.0.2
     dev: false
     optional: true
+
+  registry.npmmirror.com/dayjs/1.11.2:
+    resolution: {integrity: sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dayjs/-/dayjs-1.11.2.tgz}
+    name: dayjs
+    version: 1.11.2
+    dev: true
 
   registry.npmmirror.com/deprecation/2.3.1:
     resolution: {integrity: sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/deprecation/-/deprecation-2.3.1.tgz}

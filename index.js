@@ -8,6 +8,9 @@ const { Octokit } = require("octokit");
 
 const core = require('@actions/core');  // 引入 @actions/core
 
+const dayjs = require('dayjs');
+const { re } = require("./dist");
+
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 
 // TODO: auth : 为github的 中创建的 token 
@@ -20,16 +23,23 @@ const octokit = new Octokit({ auth: token });
 octokit.rest.issues.create({
   owner: "yellowsae",  // 作者
   repo: "try_github_action",  // 对应的仓库
-  title: "Github Action 3",  // 标题
-  body: "github action create"  // 内容
+  title: getTitle(),  // 标题
+  body: getBody()  // 内容
 });
 
 
-console.log("github action 3");
+// 使用 dayjs 将 title 改为 YYYY-MM-DD 格式 第三方库 ： https://www.npmjs.com/package/dayjs
 
 
+function getTitle() {
+  return dayjs.format("YYYY-MM-DD")
+}
 
-// 通过 @actions/core 这个库 获取到 action.yml 传递的 token 
+
+function getBody() {
+  return '[try_github_action](https://github.com/yellowsae/try_github_action)'
+}
+// 通过 @actions/core 这个库 获取到 action.yml 传递的 token
 
 
 
