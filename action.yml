@@ -16,7 +16,7 @@ description: 'test create issuse'  # 描述
 runs:
   using: 'node16' #当前的环境
   # main: 'index.js' # 主要执行的文件
-  main: "dist/index.js"  # 编译后的 index.js
+  main: "index.js"  # 编译后的 index.js
 
 
 
