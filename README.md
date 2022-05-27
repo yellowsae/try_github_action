@@ -3,7 +3,7 @@
 
 - 自动执行
 - 使用JS创建Issuse
-
+- 参考： https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html
 
 
 ### 1. 使用脚本
@@ -58,3 +58,36 @@ runs:
 
 
 ### 3. 配置 Github 的自动化 Action
+
+创建文件：`.githun/workflows/main.yml`
+
+```yml
+on: [push]  # 触发时机 ->  当执行 push 时
+
+# on: 
+#   schedule: 
+#   # 00: 01  -> Github 使用的是 UTC的时区 
+#   # 相差8个小时  也就是 24 - 8  = 16
+#     - cron: "1 16 * * *"
+jobs:  # 需要执行的 job 
+  create_issuse_action:
+    runs-on: ubuntu-latest # 指定运行的环境
+    name: create create issuse
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        run: npm install && npm run build  # 写后不用在本地 build 
+      - name: create issuse action  # 起个项目名
+        uses: ./  # 指定根目录下的 action.yml  ->  同样可以指定 执行 某个仓库的 index.js 文件 ：  yellowsae/try_github_action@main ： 需要加上 @main 分支名
+        # ${{secrets.TOKEN}}  # 在Github上设置 secrets.TOKEN -> 非明文  -> 通过 传参给 action.yml 
+        with:  # 传参用的
+          token: ${{secrets.TOKEN}}   # 传参给 action.yml 
+          
+      # Use the output from the `hello` step  #  output 验证
+      # - name: Get the output time
+      #   run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+# 当上传到 github 时候 主动触发 此文件
+
+```
