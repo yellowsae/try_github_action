@@ -18,7 +18,7 @@ const { Octokit } = require("@octokit/rest");
 
 // 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
 
-const octokit = new Octokit({ auth: `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` });
+const octokit = new Octokit({ auth: `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` });
 
 octokit.rest.issues.create({
   owner: "yellowsae",  // 作者
