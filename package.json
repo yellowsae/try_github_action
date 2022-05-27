@@ -9,7 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "octokit": "^1.7.1"
+  "dependencies": {
+    "@octokit/rest": "^18.12.0",
+    "octokit": "1.7.0"
   }
 }
