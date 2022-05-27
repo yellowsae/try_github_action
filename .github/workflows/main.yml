@@ -1,0 +1,19 @@
+on: [push]  # 触发时机 ->  当执行 push 时
+
+jobs:  # 需要执行的 job 
+  create_issuse_action:
+    runs-on: ubuntu-latest # 指定运行的环境
+    name: create create issuse
+    steps:
+      - name: create issuse action  # 起个项目名
+        uses: ./  # 指定根目录下的 action.yml
+        
+        # with:  # 传参用的
+        #   who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step  #  output 验证
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+
+
+# 当上传到 github 时候 主动触发 此文件
