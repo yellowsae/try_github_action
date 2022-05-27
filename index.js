@@ -22,7 +22,7 @@ const octokit = new Octokit({ auth: token });
 octokit.rest.issues.create({
   owner: "yellowsae",  // 作者
   repo: "try_github_action",  // 对应的仓库
-  title: getTitle() + "2",  // 标题
+  title: getTitle() +  "----3",  // 标题
   body: getBody()  // 内容
 });
 
