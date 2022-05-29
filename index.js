@@ -1,54 +1,34 @@
+const core = require("@actions/core");
+const github = require("@actions/github");
+const dayjs = require("dayjs");
 
+(function main() {
+  const token = core.getInput("token");
+  const octokit = github.getOctokit(token);
 
-// 使用 Github 提供的 API 来执行
+  createIssue(octokit);
+})();
 
-// 使用了 octokit 第三方库 ： https://www.npmjs.com/package/octokit
-
-const { Octokit } = require("octokit");
-
-const core = require('@actions/core');  // 引入 @actions/core
-
-const dayjs = require('dayjs');
-
-// Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
-
-// TODO: auth : 为github的 中创建的 token 
-// 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
-
-const token = core.getInput("token");
-// octokit  api  create issuse
-const octokit = new Octokit({ auth: token });
-
-octokit.rest.issues.create({
-  owner: "yellowsae",  // 作者
-  repo: "try_github_action",  // 对应的仓库
-  title: getTitle() +  "----3",  // 标题
-  body: getBody()  // 内容
-});
-
-
-// 使用 dayjs 将 title 改为 YYYY-MM-DD 格式 第三方库 ： https://www.npmjs.com/package/dayjs
-
-
-function getTitle() {
-  return dayjs().add("8", "hour").format("YYYY-MM-DD")
+function createIssue(octokit) {
+  octokit.rest.issues.create({
+    owner: "yellowsae",
+    repo: "blog",
+    title: getTitle(),
+    body: getBody(),
+  });
 }
-
 
 function getBody() {
-  return '[try_github_action](https://github.com/yellowsae/try_github_action)'
+  return "[如何写每日任务](https://github.com/cuixiaorui/study-every-day/blob/main/sed/daily-task.md)";
 }
-// 通过 @actions/core 这个库 获取到 action.yml 传递的 token
 
-console.log(getBody())
-// const octokit = new Octokit();
+function getTitle() {
+  return `【每日计划】 ${getDate()}`;
+}
 
-// // Compare: https://docs.github.com/en/rest/reference/repos/#list-organization-repositories
-// octokit.rest.repos
-//   .listForOrg({
-//     org: "octokit",
-//     type: "public",
-//   })
-//   .then(({ data }) => {
-//     // handle data
-//   });
+function getDate() {
+  // 运行环境是 UTC 时区
+  // 需要转换成 中国时区
+  // 中国时区 = UTC时区 + 8小时
+  return dayjs().add("8", "hour").format("YYYY-MM-DD");
+}
