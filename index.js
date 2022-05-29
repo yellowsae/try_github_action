@@ -4,11 +4,13 @@
 
 // 使用了 octokit 第三方库 ： https://www.npmjs.com/package/octokit
 
-const { Octokit } = require("octokit");
+// const { Octokit } = require("octokit");
 
 const core = require('@actions/core');  // 引入 @actions/core
 
 const dayjs = require('dayjs');
+
+const github = require("@actions/github");
 
 // Create a personal access token at https://github.com/settings/tokens/new?scopes=repo
 
@@ -17,12 +19,14 @@ const dayjs = require('dayjs');
 
 const token = core.getInput("token");
 // octokit  api  create issuse
-const octokit = new Octokit({ auth: token });
+// const octokit = new Octokit({ auth: token });
+const octokit = github.getOctokit(token);
+
 
 octokit.rest.issues.create({
   owner: "yellowsae",  // 作者
   repo: "blog",  // 对应的仓库
-  title: getTitle() +  "----3",  // 标题
+  title: getTitle(),  // 标题
   body: getBody()  // 内容
 });
 
@@ -40,7 +44,7 @@ function getBody() {
 }
 // 通过 @actions/core 这个库 获取到 action.yml 传递的 token
 
-console.log(getBody())
+// console.log(getBody())
 // const octokit = new Octokit();
 
 // // Compare: https://docs.github.com/en/rest/reference/repos/#list-organization-repositories
